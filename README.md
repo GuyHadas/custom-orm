@@ -31,6 +31,8 @@ def has_many(name, options = {})
   end
 end
 
+...
+
 def has_one_through(name, through_name, source_name)
 
   define_method name do
@@ -57,6 +59,8 @@ def has_one_through(name, through_name, source_name)
     source_options.model_class.new(results.first)
   end
 
+  ...
+
   def self.find(id)
     result = DBConnection.execute(<<-SQL, id: id)
       SELECT
@@ -68,6 +72,8 @@ def has_one_through(name, through_name, source_name)
     SQL
     result.empty? ? nil : self.new(result.first)
   end
+
+  ...
 
   def update
     set_line = []
@@ -87,6 +93,8 @@ def has_one_through(name, through_name, source_name)
     SQL
 
   end
+
+  ...
 
   module Searchable
 
@@ -109,5 +117,8 @@ def has_one_through(name, through_name, source_name)
       parse_all(results)
     end
   end
+
+  ...
+
 end
 ```
