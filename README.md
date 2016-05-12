@@ -1,10 +1,11 @@
 #Custom ORM
 
-A custom ORM inspired by Rails' Active Record.
+A custom ORM inspired by Rails' Active Record built using ruby with a TDD approach written in RSPEC.
 
 ##Features
  * Create convenient SQL joins using various associations
- * Query the database in a simple and efficient manner
+ * Query the database in a simple and efficient manner ('where', 'find', 'all')
+ * Ability to save and update models for a SQL database
  * User friendly representations of the various models and their data
 
 ## Sample Code
